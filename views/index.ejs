@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Application</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="cloud1">
+      <img src="../images/cloud1.png" />
+    </div>
+    <div class="cloud2">
+      <img src="../images/cloud2.png" />
+    </div>
+    <!-- Display an empty form area -->
+    <% if(weather == null){ %>
+        <div class="errorcontainer">
+          <fieldset>
+            <form action="/" name="form1" method="POST">
+              <span class="fa fa-search" onclick="document.form1.submit()"></span>
+              <input name="city" id="city" type="text" class="form-input"  placeholder="Enter a City" value = <%= city %> >
+              <span class="fa fa-close" onclick="document.getElementById('city').value=''"></span>
+            </form>
+          </fieldset>
+          <!-- Display error message when an invalid city name is entered -->
+          <% if(error!==null){ %>
+             <div class="error"> <%= error %> </div>
+          <% } %>
+          <% if(error==null){ %>
+            <div class="error"> Enter a city to get the weather data</div>
+          <% } %>
+        </div>
+    <% } %>
+    <% if(weather!=null && error==null){ %>
+      <div class="container">
+        <fieldset>
+          <form action="/" name="form1" method="POST">
+            <span class="fa fa-search" onclick="document.form1.submit()"></span>
+            <input name="city" id="city" type="text" class="form-input"  placeholder="Enter a City" value = <%= city %> >
+            <span class="fa fa-close" onclick="document.getElementById('city').value=''"></span>
+          </form>
+        </fieldset>
+        <!-- Display current day's weather for the city-->
+        <div class="current">
+          <% if(current !== null){ %>
+            <div class="curr"><%= current[0].max %><sup>&deg;F</sup></div>
+            <div class="other">
+              <p><%= current[0].description %></p>
+              <p><%= current[0].humidity %>% Humidity</p>
+            </div>
+          <% } %>
+        </div>
+        <div class="predictions">
+          <div class="pdiv">
+            <!-- Store the list of months to be displayed in the required format-->
+            <% var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %>
+            <% if(weather !== null){ %>
+              <!-- Display the predictions for the 5 day period -->
+              <% Object.keys(weather).forEach(function(key){ %>
+                  <% var date = months[parseInt(key.split("-")[1])-1]+" "+key.split("-")[2] %>
+                  <!-- Retrieve the image resource using the filename -->
+                  <% var url="http://openweathermap.org/img/w/"+weather[key].icon+".png" %>
+                  <div class="prediction">
+                    <div class="date"><%= date %></div>
+                    <img src=<%= url %> />
+                    <!-- Parse the flaot values to int before displying -->
+                    <div class="maxtemp"><strong><%= parseInt(weather[key].max) %></strong></div>
+                    <div class="mintemp"><%= parseInt(weather[key].min) %></div>
+                  </div>
+              <% }) %>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </body>
+</html>

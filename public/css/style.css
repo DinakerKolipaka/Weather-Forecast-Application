@@ -1,0 +1,314 @@
+body {
+    margin: 0 auto;
+    background-position: center;
+    min-height: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#367CD6), to(#183968)) fixed;
+    font-family: 'Open Sans';
+}
+/* CSS for different screen sizes */
+@media screen and (min-width: 880px) and (max-width: 1023px){
+  .cloud1 {
+      top: 270px;
+      left: 145px;
+  }
+  .cloud2 {
+    top: 270px;
+    right: 170px;
+  }
+  .container {
+    width: 50%;
+  }
+}
+
+@media screen and (width: 1024px) {
+  .cloud1 {
+      top: 245px;
+      left: 165px;
+  }
+  .cloud2 {
+    top: 230px;
+    right: 225px;
+  }
+  .container {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1149px){
+  .cloud1 {
+      top: 245px;
+      left: 180px;
+    }
+    .container {
+      width: 40%;
+    }
+    .cloud2 {
+      top: 230px;
+      right: 240px;
+    }
+
+}
+@media screen and (min-width: 1150px) and (max-width: 1279px){
+  .cloud1 {
+      top: 245px;
+      left: 210px;
+    }
+    .container {
+      width: 40%;
+    }
+    .cloud2 {
+      top: 230px;
+      right: 275px;
+    }
+
+}
+
+@media screen and (width: 1280px) {
+  .cloud1 {
+      top: 240px;
+      left: 290px;
+  }
+  .cloud2 {
+    top: 230px;
+    right: 335px;
+  }
+  .container {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1365px){
+  .cloud1 {
+      top: 240px;
+      left: 290px;
+    }
+    .container {
+      width: 35%;
+    }
+    .cloud2 {
+      top: 230px;
+      right: 330px;
+    }
+}
+
+@media screen and (width: 1366px) {
+  .cloud1 {
+      top: 190px;
+      left: 310px;
+  }
+  .cloud2 {
+    top: 183px;
+    right: 372px;
+  }
+  .container {
+    width: 33%;
+  }
+}
+@media screen and (min-width: 1367px) and (max-width: 1540px){
+  .cloud1 {
+      top: 240px;
+      left: 330px;
+  }
+  .container {
+    width: 35%;
+  }
+  .cloud2 {
+      top: 230px;
+      right: 380px;
+  }
+}
+@media screen and (min-width: 1541px) and (max-width: 1650px){
+  .cloud1 {
+      top: 240px;
+      left: 410px;
+  }
+  .container {
+    width: 30%;
+  }
+  .cloud2 {
+      top: 230px;
+      right: 460px;
+  }
+}
+@media screen and (min-width: 1651px) and (max-width: 1920px){
+  .cloud1 {
+      top: 240px;
+      left: 510px;
+  }
+  .container {
+    width: 30%;
+  }
+  .cloud2 {
+      top: 235px;
+      right: 570px;
+  }
+}
+
+span.fa.fa-search {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    color: #183968;
+}
+span.fa.fa-close {
+    position: absolute;
+    top: 20px;
+    right: 29px;
+    color: #183968;
+}
+input[type=text] {
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid #183968;
+    color: white;
+    border-radius: 4px;
+    font-size: 17px;
+    padding: 16px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-bottom: 0;
+}
+.current{
+  width: 100%;
+  text-align: center;
+}
+.prediction img {
+    margin: -8px;
+}
+.predictions {
+    width: 100%;
+    background-color: #FFF;
+    float: left;
+    text-align: center;
+    border-bottom: 1px solid transparent;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.pdiv {
+    margin: 12px 0;
+    width: 100%;
+    float: left;
+}
+.prediction {
+    float: left;
+    width: 19.8%;
+}
+.date {
+  color: #6e6e6e;
+}
+.prediction:not(:first-child) {
+    border-left: 1px solid #ddd;
+}
+.cloud1 {
+  position: absolute;
+  z-index: 1;
+}
+.cloud2 {
+  position: absolute;
+  z-index: 1;
+  float:right;
+}
+.container {
+    margin: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    background-color: #4A90E2;
+    transform: translate(-50%, -50%);
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+.errorcontainer {
+    margin: 0;
+    height: 45%;
+    width: 33%;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    background-color: #4A90E2;
+    transform: translate(-50%, -50%);
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+fieldset {
+  display: block;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-before: 0em;
+  -webkit-padding-start: 0em;
+  -webkit-padding-end: 0em;
+  -webkit-padding-after: 0em;
+  border: 0px;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  min-width: -webkit-min-content;
+  padding: 0px 30px 0px 30px;
+}
+sup {
+    font-size: 31px;
+    vertical-align: top;
+    position: relative;
+    top: 0.9em;
+}
+.error {
+    font-size: 25px;
+    padding-left: 15%;
+    padding-top: 15%;
+    color: white;
+}
+.curr {
+    float: left;
+    font-size: 118px;
+    color: white;
+    width: 66%;
+    text-align: right;
+    margin: -14px;
+}
+div {
+    display: block;
+}
+.other {
+    float: left;
+    width: 30%;
+    text-align: left;
+    position: relative;
+    top: 58px;
+    font-size: 14px;
+    left: 2px;
+}
+.form-input {
+  display: block;
+  font-weight:300;
+  width: 40%;
+  font-size: 25px;
+  border:0px;
+  outline: none;
+  width: 40%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #4b545f;
+  font-family: Open Sans;
+  padding: 10px 15px;
+  margin: 0 0 30px 0px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.form-input:focus {
+  border-bottom:1px solid #ddd;
+}
+p {
+  color: #FFF;
+  margin: 0;
+  text-transform: capitalize;
+}
